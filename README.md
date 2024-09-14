@@ -57,9 +57,9 @@ To run the project locally, follow these steps:
    cd todo-list-app
    ```
 
-3. Open `index.html` in your web browser:
+3. Open `Homepage.html` in your web browser:
    ```bash
-   open index.html
+   open Homepage.html
    ```
    Alternatively, you can use a live server (e.g., VSCode's Live Server extension) for easier development.
 
