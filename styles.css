@@ -1,0 +1,281 @@
+
+/* General Body Styling */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #e0e0e0;
+    background-image: url('https://www.shutterstock.com/shutterstock/photos/2086902463/display_1500/stock-vector-doodle-checklist-set-to-do-task-list-with-check-mark-vector-illustration-hand-drawn-sketch-style-2086902463.jpg');
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+/* Container for To-Do List */
+.todo-container {
+    position: fixed;
+    background-color: #ece7e7f9;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 700px;
+    height: auto;
+    overflow-y: auto;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.todo-container:hover {
+    transform: translateY(-5px);
+}
+
+/* Title Styling */
+h1 {
+    margin-bottom: 25px;
+    font-size: 24px;
+    color: #5cb85c;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Input Section Styling */
+.input-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+#new-task {
+    width: 70%;
+    padding: 12px;
+    border: 2px solid #5cb85c;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+#new-task:focus {
+    border-color: #4cae4c;
+    outline: none;
+}
+
+#add-task-button {
+    padding: 12px 25px;
+    background-color: #5cb85c;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#add-task-button:hover {
+    background-color: #4cae4c;
+}
+
+#add-task-button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+
+/* Task List Styling */
+#task-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    max-height: 100%;
+    overflow-y: auto;
+}
+
+/* Task Item Styling */
+.task-item {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Task Number Styling */
+.task-number {
+    font-weight: bold;
+    width: 40px; /* Fixed width for alignment */
+    text-align: center; /* Center align the numbers */
+}
+
+/* Ensure task text wraps correctly */
+.task-item span {
+    flex: 1;
+    overflow-wrap: break-word;
+    margin-right: 10px;
+}
+
+/* Ensure buttons are positioned correctly */
+.task-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+/* Button Styling */
+.task-buttons button {
+    background-color: #d9534f;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: auto;
+    outline: none;
+}
+
+.task-buttons button:hover {
+    background-color: #c9302c;
+}
+
+.task-buttons .edit-button {
+    background-color: #f0ad4e;
+}
+
+.task-buttons .edit-button:hover {
+    background-color: #ec971f;
+}
+
+/* Completed Task Styling */
+.complete {
+    text-decoration: none;
+    color: #999;
+    background-color: #d4edda; /* Light green background */
+    color: #155724; /* Dark green text */
+}
+
+/* Priority Button Styling */
+.priority-button {
+    margin-left: 10px;
+    padding: 5px;
+    font-size: 12px;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+}
+
+.priority-button.high-priority {
+    background-color: #dc3545;
+}
+
+.priority-button:hover {
+    background-color: #0056b3;
+}
+
+/* Custom Confirmation Dialog Styling */
+#custom-confirm {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#custom-confirm > div {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#custom-confirm button {
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    outline: none;
+}
+
+#custom-confirm button.yes {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+#custom-confirm button.no {
+    background-color: #f44336;
+    color: #fff;
+}
+
+/* Task Stats Box Styling */
+#task-stats-box {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #ece7e7f9;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: left;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+}
+
+#task-stats-box:hover {
+    transform: translateY(-5px);
+}
+
+#task-stats-box p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #5cb85c;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#task-stats-box span {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .todo-container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    #new-task {
+        width: 60%;
+    }
+
+    #add-task-button {
+        padding: 10px 20px;
+    }
+}
