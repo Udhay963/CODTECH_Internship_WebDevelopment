@@ -37,11 +37,17 @@ Table of Contents
 
 You can view the demo of the To-Do List application [here](#) (Replace with the actual demo link).
 
-Technologies Used
+Technologies Used and Ouput visualization 
 
 - HTML5: Markup language for structuring the web pages.
 - CSS3: For styling and creating a responsive design.
 - JavaScript: For implementing the application's functionality and dynamic behavior.
+
+And below are the visualization of the project
+  ![Screenshot 2024-09-14 210656](https://github.com/user-attachments/assets/99b663fe-29fe-4523-bf28-781f396223c4)
+![Screenshot 2024-09-14 210757](https://github.com/user-attachments/assets/6352ff6a-0dcd-4989-b770-0647373a7e57)
+![Screenshot 2024-09-14 211107](https://github.com/user-attachments/assets/e050dee1-9345-4827-bac5-f077445db89c)
+
 
 Installation
 
